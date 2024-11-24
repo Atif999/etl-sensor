@@ -72,11 +72,15 @@ Connect to PostgreSQL and run the `script.sql` file
 
 **Database Configuration**
 
-DB_NAME=your_database_name
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
-DB_HOST=localhost
-DB_PORT=5432
+DB_NAME=your_database_name<br>
+
+DB_USER=your_database_user<br>
+
+DB_PASSWORD=your_database_password<br>
+
+DB_HOST=localhost<br>
+
+DB_PORT=5432<br>
 
 **File Monitoring Configuration**
 
@@ -148,10 +152,10 @@ Kafka or Step Functions can be used to manage the task execution flow.
 
 AWS Lambda and Apache Spark (on Amazon EMR). This pipeline will scale horizontally and process large amounts of sensor data uploaded to AWS S3. We'll break the implementation into the following steps:
 
-Data Ingestion (S3 + Lambda)
-Data Processing (Lambda + Apache Spark on EMR)
-Storage (S3 + RDS/PostgreSQL)
-Event-Driven Architecture (S3 + Lambda)
+Data Ingestion (S3 + Lambda)<br>
+Data Processing (Lambda + Apache Spark on EMR)<br>
+Storage (S3 + RDS/PostgreSQL)<br>
+Event-Driven Architecture (S3 + Lambda)<br>
 
 1. Data Ingestion and Event-Driven Architecture
    First, let's define how to trigger AWS Lambda when a new CSV file is uploaded to an S3 bucket.
