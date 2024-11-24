@@ -7,30 +7,33 @@ The ETL pipeline processes sensor data in real-time by monitoring a directory fo
 
 **Pipeline Components**
 
-Folder Monitoring:
+**Folder Monitoring:**
 The pipeline continuously monitors a folder for new CSV files every 5–10 seconds.
 Uses the os module for directory scanning.
 
-File Validation and Transformation:
+**File Validation and Transformation:**
 Validates data integrity, such as date formats, numerical ranges, and missing values.
 Transforms data by normalizing key columns and converting temperatures to Kelvin.
-Aggregation:
 
+**Aggregation:**
 Calculates metrics (min, max, mean, std) for critical columns like temperature, humidity, and pressure.
 Focuses on essential sensor data while still storing all columns.
 
-Database Interaction:
+**Database Interaction:**
 Saves raw data and aggregated metrics to a PostgreSQL database.
 Uses prepared SQL queries to ensure security and consistency.
 
-Error Handling and Resilience:
+**Error Handling and Resilience:**
 Implements a retry mechanism for failed operations (e.g., database connection failures).
 Quarantines invalid files for manual review.
 
-Logging:
+**Logging:**
 Logs important events, such as successful processing, retries, and errors.
 
-Pipeline Flow
+**Schema Images**
+You can find the table schema image in the directory with name `aggregated_table.png` and `Main-table.png`
+
+**Pipeline Flow**
 
 1. Folder Monitoring:
    Detects a new CSV file and triggers processing.
@@ -53,6 +56,8 @@ Pipeline Flow
    Moves processed files to a "processed" folder for record-keeping.
 
 Instructions for Setting Up and Running the Pipeline Locally
+
+Dataset used: `https://www.kaggle.com/datasets/alistairking/weather-long-term-time-series-forecasting?resource=download`
 
 1. Install Dependencies
    Make sure you have the required Python libraries and PostgreSQL installed.
